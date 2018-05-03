@@ -1,4 +1,4 @@
-# StrLiterals
+# StrEntities
 
 [![Build Status](https://travis-ci.org/JuliaString/StrEntities.jl.svg?branch=master)](https://travis-ci.org/JuliaString/StrEntities.jl)
 
