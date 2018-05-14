@@ -1,8 +1,11 @@
 # License is MIT: LICENSE.md
 
-@static VERSION < v"0.7.0-DEV" ? (using Base.Test) : (using Test)
+using APITools
 
-using Strs, StrLiterals, StrEntities
+@api test StrAPI, CharSetEncodings, Chars, StrBase
+@api test StrLiterals, StrEntities
+
+@static V6_COMPAT ? (using Base.Test) : (using Test)
 
 @testset "LaTeX Entities" begin
     @test f"\<dagger>" == "†"

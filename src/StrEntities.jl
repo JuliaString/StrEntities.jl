@@ -7,9 +7,11 @@ Licensed under MIT License, see LICENSE.md
 """
 module StrEntities
 
-using StrTables, HTML_Entities, LaTeX_Entities, Emoji_Entities, Unicode_Entities
+using APITools, StrTables, HTML_Entities, LaTeX_Entities, Emoji_Entities, Unicode_Entities
 
-using StrLiterals: throw_arg_err, parse_chr
+@api init
+
+@api extend StrAPI, CharSetEncodings, Chars, StrBase, StrLiterals
 
 function _parse_entity(io, str, pos, begseq, fin, tab, nam)
     beg = pos # start location
@@ -46,4 +48,5 @@ function __init__()
     parse_chr['N'] = _parse_unicode
 end
 
+@api freeze
 end # module StrEntities

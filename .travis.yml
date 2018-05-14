@@ -20,9 +20,9 @@ git:
 # uncomment the following lines to override the default test script
 script:
   - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
-  - julia -e 'p="https://github.com/JuliaString"; s=".jl.git"; l="_Entities"; Pkg.clone("$p/StrTables$s"); t=("LaTeX","Emoji","HTML","Unicode"); for n in t; Pkg.clone("$p/$n$l$s"); end; Pkg.clone("$p/Strs$s"); Pkg.clone("$p/StrLiterals$s"); Pkg.clone(pwd()); Pkg.add("LightXML"); Pkg.add("JSON"); for n in t; Pkg.build("$n$l"); end; Pkg.test("StrEntities"; coverage=true)'
+  - julia -e 'VERSION < v"0.7.0-DEV" || (using Pkg); p="https://github.com/JuliaString"; s=".jl.git"; l="_Entities"; for n in ("StrTables", "LightXML", "JSON") ; Pkg.add(n) ; end ; t=("LaTeX","Emoji","HTML","Unicode"); for n in t; Pkg.add("$n$l"); end; for n in ("APITools", "StrAPI", "CharSetEncodings", "Chars", "StrBase", "StrLiterals") ; Pkg.clone("$p/$n$s"); end ; Pkg.clone(pwd()); for n in t; Pkg.build("$n$l"); end; Pkg.test("StrEntities"; coverage=true)'
 after_success:
   # push coverage results to Coveralls
-  - julia -e 'cd(Pkg.dir("StrEntities")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())'
+  - julia -e 'VERSION < v"0.7.0-DEV" || (using Pkg); cd(Pkg.dir("StrEntities")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())'
   # push coverage results to Codecov
-  - julia -e 'cd(Pkg.dir("StrEntities")); Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())'
+  - julia -e 'VERSION < v"0.7.0-DEV" || (using Pkg); cd(Pkg.dir("StrEntities")); Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())'
