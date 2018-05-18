@@ -9,16 +9,14 @@ module StrEntities
 
 using APITools, StrTables, HTML_Entities, LaTeX_Entities, Emoji_Entities, Unicode_Entities
 
-@api init
-
 @api extend StrAPI, CharSetEncodings, Chars, StrBase, StrLiterals
 
 function _parse_entity(io, str, pos, begseq, fin, tab, nam)
     beg = pos # start location
-    chr, pos = next(str, pos)
+    chr, pos = str_next(str, pos)
     while chr != fin
-        done(str, pos) && throw_arg_err("\\$begseq missing ending $fin in ", str)
-        chr, pos = next(str, pos)
+        str_done(str, pos) && throw_arg_err("\\$begseq missing ending $fin in ", str)
+        chr, pos = str_next(str, pos)
     end
     seq = lookupname(tab, str[beg:pos-2])
     seq == "" && throw_arg_err("Invalid $nam name in ", str)
@@ -34,12 +32,14 @@ _parse_emoji(io, str, pos, chr) =
     _parse_entity(io, str, pos, ":", ':', Emoji_Entities.default, "Emoji")
 
 function _parse_unicode(io, str, pos, chr)
-    done(str, pos) && throw_arg_err("\\N incomplete in ", str)
-    chr, pos = next(str, pos)
+    str_done(str, pos) && throw_arg_err("\\N incomplete in ", str)
+    chr, pos = str_next(str, pos)
     chr == '{' || throw_arg_err("\\N missing initial { in ", str)
-    done(str, pos) && throw_arg_err("\\N{ incomplete in ", str)
+    str_done(str, pos) && throw_arg_err("\\N{ incomplete in ", str)
     _parse_entity(io, str, pos, "N{", '}', Unicode_Entities.default, "Unicode")
 end
+
+import StrLiterals.parse_chr
 
 function __init__()
     parse_chr[':'] = _parse_emoji
