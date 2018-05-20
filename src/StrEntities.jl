@@ -9,7 +9,7 @@ module StrEntities
 
 using APITools, StrTables, HTML_Entities, LaTeX_Entities, Emoji_Entities, Unicode_Entities
 
-@api extend StrAPI, CharSetEncodings, Chars, StrBase, StrLiterals
+@api extend StrAPI, StrLiterals
 
 function _parse_entity(io, str, pos, begseq, fin, tab, nam)
     beg = pos # start location
@@ -39,14 +39,11 @@ function _parse_unicode(io, str, pos, chr)
     _parse_entity(io, str, pos, "N{", '}', Unicode_Entities.default, "Unicode")
 end
 
-import StrLiterals.parse_chr
-
 function __init__()
-    parse_chr[':'] = _parse_emoji
-    parse_chr['&'] = _parse_html
-    parse_chr['<'] = _parse_latex
-    parse_chr['N'] = _parse_unicode
+    StrLiterals.parse_chr[':'] = _parse_emoji
+    StrLiterals.parse_chr['&'] = _parse_html
+    StrLiterals.parse_chr['<'] = _parse_latex
+    StrLiterals.parse_chr['N'] = _parse_unicode
 end
 
-@api freeze
 end # module StrEntities

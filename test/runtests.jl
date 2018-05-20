@@ -2,10 +2,8 @@
 
 using APITools
 
-@api test StrAPI, CharSetEncodings, Chars, StrBase
-@api test StrLiterals, StrEntities
-
-@static V6_COMPAT ? (using Base.Test) : (using Test)
+@api test StrLiterals
+using StrEntities
 
 @testset "LaTeX Entities" begin
     @test f"\<dagger>" == "†"
