@@ -7,7 +7,7 @@ Licensed under MIT License, see LICENSE.md
 """
 module StrEntities
 
-using APITools, StrTables, HTML_Entities, LaTeX_Entities, Emoji_Entities, Unicode_Entities
+using ModuleInterfaceTools, StrTables, HTML_Entities, LaTeX_Entities, Emoji_Entities, Unicode_Entities
 
 @api extend StrAPI, StrLiterals
 
