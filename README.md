@@ -1,9 +1,9 @@
 # StrEntities
 
-| **Package Status** | **Package Evaluator** | **Coverage**      |
-|:------------------:|:---------------------:|:-----------------:|
-| [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE.md) [![Build Status](https://travis-ci.org/JuliaString/StrEntities.jl.svg?branch=master)](https://travis-ci.org/JuliaString/StrEntities.jl) | [![StrEntities](http://pkg.julialang.org/badges/StrEntities_0.6.svg)](http://pkg.julialang.org/?pkg=StrEntities) [![StrEntities](http://pkg.julialang.org/badges/StrEntities_0.7.svg)](http://pkg.julialang.org/?pkg=StrEntities) | [![Coverage Status](https://coveralls.io/repos/github/JuliaString/StrEntities.jl/badge.svg?branch=master)](https://coveralls.io/github/JuliaString/StrEntities.jl?branch=master)
-[![codecov.io](http://codecov.io/github/JuliaString/StrEntities.jl/coverage.svg?branch=master)](http://codecov.io/github/JuliaString/StrEntities.jl?branch=master) |
+| **Info** | **Package Status** | **Package Evaluator** | **Coverage** |
+|:------------------:|:------------------:|:---------------------:|:-----------------:|
+| [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE.md) | [![Build Status](https://travis-ci.org/JuliaString/StrEntities.jl.svg?branch=master)](https://travis-ci.org/JuliaString/StrEntities.jl) | [![StrEntities](http://pkg.julialang.org/badges/StrEntities_0.6.svg)](http://pkg.julialang.org/?pkg=StrEntities) | [![Coverage Status](https://coveralls.io/repos/github/JuliaString/StrEntities.jl/badge.svg?branch=master)](https://coveralls.io/github/JuliaString/StrEntities.jl?branch=master)
+| [![Gitter Chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JuliaString/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) | | [![StrEntities](http://pkg.julialang.org/badges/StrEntities_0.7.svg)](http://pkg.julialang.org/?pkg=StrEntities) | [![codecov.io](http://codecov.io/github/JuliaString/StrEntities.jl/coverage.svg?branch=master)](http://codecov.io/github/JuliaString/StrEntities.jl?branch=master)
 
 StrEntities extends the string literals provided by the [StrLiterals](https://github.com/JuliaString/StrLiterals.jl) package.
 It adds support for HTML, LaTeX, Unicode and Emoji entities, provided by the packages:
