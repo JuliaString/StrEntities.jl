@@ -1,0 +1,15 @@
+name = "StrEntities"
+desc = "Extension for StrLiterals, adds support for entities in formatted strings"
+authors = ["ScottPJones <scottjones@alum.mit.edu>"]
+keywords = ["Strings", "Literals", "Entities", "Unicode", "HTML", "LaTeX", "Emoji"]
+license = "MIT"
+uuid = "f6164076-6934-4707-9ef0-ff39da4345e6"
+repo = "https://github.com/JuliaString/StrEntities.jl.git"
+version = "0.1.2"
+
+[deps]
+LaTeX_Entities = "9927f19a-46ce-5bdd-a20a-f46a78b61e3d"
+HTML_Entities = "7693890a-d069-55fe-a829-b4a6d304f0ee"
+Unicode_Entities = "a8aa15d3-c567-5e9f-b6cc-4b0f97f09cf7"
+Emoji_Entities = "fd8f23de-bd2f-5c75-921c-0c9ab51355f5"
+StrLiterals = "627f7b36-cfa1-4420-8f93-de9d4fe56cdc"
