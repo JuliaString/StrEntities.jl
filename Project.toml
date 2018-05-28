@@ -5,7 +5,6 @@ keywords = ["Strings", "Literals", "Entities", "Unicode", "HTML", "LaTeX", "Emoj
 license = "MIT"
 uuid = "f6164076-6934-4707-9ef0-ff39da4345e6"
 repo = "https://github.com/JuliaString/StrEntities.jl.git"
-version = "0.1.2"
 
 [deps]
 ModuleInterfaceTools = "5cb8414e-7aab-5a03-a681-351269c074bf"
