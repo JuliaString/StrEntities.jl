@@ -41,7 +41,7 @@ build_script:
 # Need to convert from shallow to complete for Pkg.clone to work
   - IF EXIST .git\shallow (git fetch --unshallow)
   - C:\projects\julia\bin\julia -e "VERSION < v\"0.7.0-DEV\" || (using Pkg, InteractiveUtils);
-      versioninfo(); pkg = \"StrEntities\";
+      versioninfo();
       if VERSION < v\"0.7.0-DEV.5183\";
          for n in (\"ModuleInterfaceTools\", \"StrTables\", \"LightXML\", \"JSON\", \"StrAPI\", \"CharSetEncodings\") ; Pkg.add(n) ; end;
          t=(\"LaTeX\",\"Emoji\",\"HTML\",\"Unicode\");
@@ -49,9 +49,7 @@ build_script:
          for n in (\"ChrBase\", \"MurmurHash3\", \"StrBase\", \"StrLiterals\");
              Pkg.clone(\"https://github.com/JuliaString/$n.jl.git\");
          end;
-         Pkg.clone(pwd(), pkg);
-      else;
-         Pkg.add(pwd(), pkg);
+         Pkg.clone(pwd(), \"StrEntities\");
       end"
 
 test_script:
