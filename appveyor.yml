@@ -47,7 +47,7 @@ build_script:
          t=(\"LaTeX\",\"Emoji\",\"HTML\",\"Unicode\");
          for n in t; d = n*\"_Entities\" ; Pkg.add(d); Pkg.build(d) ; end;
          for n in (\"ChrBase\", \"MurmurHash3\", \"StrBase\", \"StrLiterals\");
-             Pkg.clone(\"https://github.com/JuliaString/$n.jl.git\");
+             Pkg.clone(\"https:\/\/github.com\/JuliaString\/$n.jl.git\");
          end;
          Pkg.clone(pwd(), \"StrEntities\");
       end"
