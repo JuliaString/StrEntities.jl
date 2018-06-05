@@ -41,22 +41,16 @@ build_script:
 # Need to convert from shallow to complete for Pkg.clone to work
   - IF EXIST .git\shallow (git fetch --unshallow)
   - C:\projects\julia\bin\julia -e "VERSION < v\"0.7.0-DEV\" || (using InteractiveUtils);
-      versioninfo(); pkg = \"StrEntities\"; loc = \"https://github.com/JuliaString\";
-      mit = \"ModuleInterfaceTools\"; mh3 = \"MurmurHash3\"; sb = \"StrBase\";
-      la = (\"StrTables\", \"LightXML\", \"JSON\", \"StrAPI\", \"CharSetEncodings\", \"ChrBase\");
-      lc = (\"StrBase\", \"StrLiterals\");
+      versioninfo(); pkg = \"StrEntities\";
       if VERSION < v\"0.7.0-DEV.5183\";
-         Pkg.clone(\"$loc/$mit.jl\", mit);
-         Pkg.clone(\"$loc/$mh3.jl\", mh3);
-         for n in la; Pkg.add(n); end;
-         t=(\"LaTeX\",\"Emoji\",\"HTML\",\"Unicode\");
-         for n in t; d = n*\"_Entities\" ; Pkg.add(d); Pkg.build(d) ; end;
-         for n in lc; Pkg.clone(\"$loc/$n.jl.git\", n); end;
-         Pkg.clone(pwd(), \"StrEntities\");
+         Pkg.clone(pwd(), pkg);
       else;
          using Pkg;
-         for n in (mit, mh3, sb); Pkg.add(\"$loc/$n.jl\"); end;
-      end"
+         Pkg.up();
+         l = ("ChrBase", "StrBase", "StrLiterals");
+         for n in l; Pkg.rm(n); end;
+         Pkg.add(["https://github.com/JuliaString/$n.jl" for n in l]);
+     end"
 
 test_script:
-  - C:\projects\julia\bin\julia -e "Pkg.test(\"StrEntities\")"
+  - C:\projects\julia\bin\julia -e "VERSION < v\"0.7.0-DEV\" || (using Pkg); Pkg.test(\"StrEntities\")"

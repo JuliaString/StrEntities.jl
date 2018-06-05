@@ -2,6 +2,8 @@
 
 using ModuleInterfaceTools
 
+@static V6_COMPAT || (using Pkg)
+
 @api test StrLiterals
 using StrEntities
 
