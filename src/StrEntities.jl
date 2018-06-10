@@ -7,9 +7,10 @@ Licensed under MIT License, see LICENSE.md
 """
 module StrEntities
 
-using ModuleInterfaceTools, StrTables, HTML_Entities, LaTeX_Entities, Emoji_Entities, Unicode_Entities
+using ModuleInterfaceTools, StrTables
+using HTML_Entities, LaTeX_Entities, Emoji_Entities, Unicode_Entities
 
-@api extend StrAPI, StrLiterals
+@api use StrLiterals
 
 function _parse_entity(io, str, pos, begseq, fin, tab, nam)
     beg = pos # start location

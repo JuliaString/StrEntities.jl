@@ -2,10 +2,7 @@
 
 using ModuleInterfaceTools
 
-@static V6_COMPAT || (using Pkg)
-
-@api test StrLiterals
-using StrEntities
+@api test StrEntities
 
 @testset "LaTeX Entities" begin
     @test f"\<dagger>" == "†"
