@@ -1,8 +1,8 @@
 julia 0.6
-ModuleInterfaceTools 0.1.2
+ModuleInterfaceTools 0.1.4
 StrTables 0.2.4
 LaTeX_Entities 0.2.4
 HTML_Entities 0.2.4
 Unicode_Entities 0.2.4
 Emoji_Entities 0.2.4
-StrLiterals 0.1.1
+StrLiterals 0.1.3

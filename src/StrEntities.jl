@@ -16,7 +16,7 @@ function _parse_entity(io, str, pos, begseq, fin, tab, nam)
     beg = pos # start location
     chr, pos = str_next(str, pos)
     while chr != fin
-        str_done(str, pos) && throw_arg_err("\\$begseq missing ending $fin in ", str)
+        check_done(str, pos, "\\$begseq missing ending $fin")
         chr, pos = str_next(str, pos)
     end
     seq = lookupname(tab, str[beg:pos-2])
@@ -33,10 +33,10 @@ _parse_emoji(io, str, pos, chr) =
     _parse_entity(io, str, pos, ":", ':', Emoji_Entities.default, "Emoji")
 
 function _parse_unicode(io, str, pos, chr)
-    str_done(str, pos) && throw_arg_err("\\N incomplete in ", str)
+    check_done(str, pos, "\\N incomplete")
     chr, pos = str_next(str, pos)
     chr == '{' || throw_arg_err("\\N missing initial { in ", str)
-    str_done(str, pos) && throw_arg_err("\\N{ incomplete in ", str)
+    check_done(str, pos, "\\N{ incomplete")
     _parse_entity(io, str, pos, "N{", '}', Unicode_Entities.default, "Unicode")
 end
 
