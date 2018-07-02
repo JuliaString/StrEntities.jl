@@ -10,7 +10,7 @@ module StrEntities
 using ModuleInterfaceTools, StrTables
 using HTML_Entities, LaTeX_Entities, Emoji_Entities, Unicode_Entities
 
-@api use StrLiterals
+@api use! StrLiterals
 
 function _parse_entity(io, str, pos, begseq, fin, tab, nam)
     beg = pos # start location
