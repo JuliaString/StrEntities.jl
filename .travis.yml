@@ -18,9 +18,9 @@ git:
 #    - julia: nightly
 
 # uncomment the following lines to override the default test script
-script:
-  - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
-  - julia -e 'sf="https://github.com/JuliaString/StrLiterals.jl"; if VERSION < v"0.7.0-DEV.5183"; Pkg.clone(sf); Pkg.clone(pwd()); else; using Pkg; Pkg.add(sf); Pkg.add(pwd()); end; Pkg.test("StrEntities", coverage=true)'
+#script:
+#  - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
+#  - julia -e 'if VERSION < v"0.7.0-DEV.5183"; Pkg.clone(pwd()); else; using Pkg; Pkg.add(pwd()); end; Pkg.test("StrEntities", coverage=true)'
 after_success:
   # push coverage results to Coveralls & Codecov
   - julia -e 'VERSION < v"0.7.0-DEV" || (using Pkg); cd(Pkg.dir("StrEntities")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder()); Codecov.submit(Codecov.process_folder())'
