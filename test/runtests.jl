@@ -2,7 +2,7 @@
 
 using ModuleInterfaceTools
 
-@api test StrEntities
+@api test StrLiterals, StrEntities
 
 @testset "LaTeX Entities" begin
     @test f"\<dagger>" == "†"
