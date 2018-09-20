@@ -2,7 +2,9 @@
 
 using ModuleInterfaceTools
 
-@api test StrLiterals, StrEntities
+@static VERSION < v"0.7.0-DEV" ? (using Base.Test) : (using Test)
+
+@api use StrLiterals, StrEntities
 
 @testset "LaTeX Entities" begin
     @test f"\<dagger>" == "†"
