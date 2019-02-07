@@ -4,7 +4,7 @@ authors = ["ScottPJones <scottjones@alum.mit.edu>"]
 keywords = ["Strings", "Literals", "Entities", "Unicode", "HTML", "LaTeX", "Emoji"]
 license = "MIT"
 uuid = "42b7a45b-8021-5b99-aff5-7432580bee1c"
-version = "0.2.1"
+version = "0.3.0"
 
 [deps]
 ModuleInterfaceTools = "5cb8414e-7aab-5a03-a681-351269c074bf"
