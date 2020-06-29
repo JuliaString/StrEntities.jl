@@ -1,9 +1,12 @@
 # StrEntities
 
-| **Info** | **Windows** | **Linux & MacOS** | **Package Evaluator** | **CodeCov** | **Coveralls** |
-|:------------------:|:------------------:|:---------------------:|:-----------------:|:---------------------:|:-----------------:|
-| [![][license-img]][license-url] | [![][app-s-img]][app-s-url] | [![][travis-s-img]][travis-url] | [![][pkg-s-img]][pkg-s-url] | [![][codecov-img]][codecov-url] | [![][coverall-s-img]][coverall-s-url]
-| [![][gitter-img]][gitter-url] | [![][app-m-img]][app-m-url] | [![][travis-m-img]][travis-url] | [![][pkg-m-img]][pkg-m-url] | [![][codecov-img]][codecov-url] | [![][coverall-m-img]][coverall-m-url]
+[pkg-url]: https://github.com/JuliaString/StrEntities.jl.git
+
+[julia-url]:    https://github.com/JuliaLang/Julia
+[julia-release]:https://img.shields.io/github/release/JuliaLang/julia.svg
+
+[release]:      https://img.shields.io/github/release/JuliaString/StrEntities.jl.svg
+[release-date]: https://img.shields.io/github/release-date/JuliaString/StrEntities.jl.svg
 
 [license-img]:  http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat
 [license-url]:  LICENSE.md
@@ -15,23 +18,17 @@
 [travis-s-img]: https://travis-ci.org/JuliaString/StrEntities.jl.svg
 [travis-m-img]: https://travis-ci.org/JuliaString/StrEntities.jl.svg?branch=master
 
-[app-s-url]:    https://ci.appveyor.com/project/ScottPJones/strentities-jl
-[app-m-url]:    https://ci.appveyor.com/project/ScottPJones/strentities-jl/branch/master
-[app-s-img]:    https://ci.appveyor.com/api/projects/status/5pj0ubfrai4dsp0r?svg=true
-[app-m-img]:    https://ci.appveyor.com/api/projects/status/5pj0ubfrai4dsp0r/branch/master?svg=true
-
-[pkg-s-url]:    http://pkg.julialang.org/?pkg=StrEntities?ver=0.7
-[pkg-m-url]:    http://pkg.julialang.org/?pkg=StrEntities?ver=0.7
-[pkg-s-img]:    http://pkg.julialang.org/badges/StrEntities_0.6.svg
-[pkg-m-img]:    http://pkg.julialang.org/badges/StrEntities_0.7.svg
-
 [codecov-url]:  https://codecov.io/gh/JuliaString/StrEntities.jl
 [codecov-img]:  https://codecov.io/gh/JuliaString/StrEntities.jl/branch/master/graph/badge.svg
 
-[coverall-s-url]: https://coveralls.io/github/JuliaString/StrEntities.jl?branch=master?ver=0.6
-[coverall-m-url]: https://coveralls.io/github/JuliaString/StrEntities.jl?branch=master?ver=0.7
-[coverall-s-img]: https://coveralls.io/repos/github/JuliaString/StrEntities.jl/badge.svg?branch=master?ver=0.6
-[coverall-m-img]: https://coveralls.io/repos/github/JuliaString/StrEntities.jl/badge.svg?branch=master?ver=0.7
+[contrib]:    https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
+
+[![][release]][pkg-url] [![][release-date]][pkg-url] [![][license-img]][license-url] [![contributions welcome][contrib]](https://github.com/JuliaString/StrEntities.jl/issues)
+
+| **Julia Version** | **Unit Tests** | **Coverage** |
+|:------------------:|:------------------:|:---------------------:|
+| [![][julia-release]][julia-url] | [![][travis-s-img]][travis-url] | [![][codecov-img]][codecov-url]
+| Julia Latest | [![][travis-m-img]][travis-url] | [![][codecov-img]][codecov-url]
 
 StrEntities extends the string literals provided by the [StrLiterals](https://github.com/JuliaString/StrLiterals.jl) package.
 It adds support for HTML, LaTeX, Unicode and Emoji entities, provided by the packages:
