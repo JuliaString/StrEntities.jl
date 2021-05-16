@@ -14,9 +14,7 @@
 [gitter-img]:   https://badges.gitter.im/Join%20Chat.svg
 [gitter-url]:   https://gitter.im/JuliaString/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 
-[travis-url]:   https://travis-ci.org/JuliaString/StrEntities.jl
-[travis-s-img]: https://travis-ci.org/JuliaString/StrEntities.jl.svg
-[travis-m-img]: https://travis-ci.org/JuliaString/StrEntities.jl.svg?branch=master
+[checks]:       https://img.shields.io/github/checks-status/JuliaString/StrEntities.jl/master
 
 [codecov-url]:  https://codecov.io/gh/JuliaString/StrEntities.jl
 [codecov-img]:  https://codecov.io/gh/JuliaString/StrEntities.jl/branch/master/graph/badge.svg
@@ -27,8 +25,8 @@
 
 | **Julia Version** | **Unit Tests** | **Coverage** |
 |:------------------:|:------------------:|:---------------------:|
-| [![][julia-release]][julia-url] | [![][travis-s-img]][travis-url] | [![][codecov-img]][codecov-url]
-| Julia Latest | [![][travis-m-img]][travis-url] | [![][codecov-img]][codecov-url]
+| [![][julia-release]][julia-url] | | [![][codecov-img]][codecov-url]
+| Julia Latest | [![][checks]][pkg-url] | [![][codecov-img]][codecov-url]
 
 StrEntities extends the string literals provided by the [StrLiterals](https://github.com/JuliaString/StrLiterals.jl) package.
 It adds support for HTML, LaTeX, Unicode and Emoji entities, provided by the packages:
